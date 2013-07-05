@@ -1,0 +1,26 @@
+# Mac OS X stuff
+.DS_Store
+
+# Python stuff
+*.pyc
+
+# Sublime stuff
+*.py~
+
+# PyCharm stuff
+.idea
+
+# No local settings
+local.py
+
+# No secret file
+secret.txt
+
+# No coverage
+.coverage
+
+# No db
+*.db
+
+# No coverage report
+htmlcov

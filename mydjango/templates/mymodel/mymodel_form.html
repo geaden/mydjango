@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+    {% if object %}
+        {% trans 'Edit' %} {{ object.title }}
+    {% else %}
+        {% trans 'Create' %}
+    {% endif %}
+{% endblock %}
+{% block content %}
+<h1>{% if object %}{{ object.title }}{% else %}{% trans 'Create' %}{% endif %}</h1>
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% trans 'Submit' %}" />
+</form>
+{% endblock %}

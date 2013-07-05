@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}{{ object }}{% endblock %}
+{% block content %}
+<a href="{% url 'mymodel:update' object.id%}">
+    Edit
+</a>
+<h1>{{ object }}</h1>
+<h2>{{ object.created }}</h2>
+{% endblock %}

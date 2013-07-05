@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'List of my model'%}{% endblock %}
+{% block content %}
+<h1>{% trans 'List of my model' %}</h1>
+<table>
+  <thead>
+    <tr>
+      <th width="200">{% trans 'ID' %}</th>
+      <th>{% trans 'Title' %}</th>
+      <th width="150">{% trans 'Created' %}</th>
+      <th width="150">{% trans 'Modified' %}</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for object in object_list %}
+    <tr>
+      <td><a href="{% url 'mymodel:detail' object.id %}">
+        {{ object.title }}</a></td>
+      <td>{{ object.created }}</td>
+      <td>{{ object.modified }}</td>
+    </tr>
+  {% empty %}
+      <tr>
+        <td colspan="3">
+            {% trans 'No objects yet' %}
+        </td>
+      </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

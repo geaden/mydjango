@@ -1,0 +1,26 @@
+{% load i18n %}
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><a href="{% url 'main:index' %}">{% trans 'My web app' %}</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon">
+        <a href="#"><span>{% trans 'Menu' %}</span></a></li>
+    <ul class="left">
+      <li class="divider"></li>
+      {% url 'mymodel:list' as list_url %}
+      <li class="has-dropdown {% ifequal request.path list_url %}active{% endifequal %}"><a href="#">MyModels</a>
+        <ul class="dropdown">
+          <li><a href="{% url 'mymodel:create' %}">Create</a></li>
+          <li><a href="{{ list_url }}">See all&rarr;</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+      {% url 'main:about' as about_url %}
+      <li {% ifequal request.path about_url %}class="active"{% endifequal %}><a href="{{ about_url }}">{% trans 'About' %}</a></li>
+      <li class="divider"></li>
+    </ul>
+  </ul>
+</nav>
