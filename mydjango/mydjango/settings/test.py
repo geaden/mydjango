@@ -9,7 +9,7 @@ run test suite locally
 TEST_RUNNER = 'discover_runner.DiscoverRunner'
 TEST_DISCOVER_TOP_LEVEL = PROJECT_ROOT
 TEST_DISCOVER_ROOT = PROJECT_ROOT
-TEST_DISVOER_PATTERN = 'test_*'
+TEST_DISCOER_PATTERN = 'test_*'
 
 
 DATABASES = {
